@@ -1,0 +1,47 @@
+# Virtual environments
+.venv/
+.venv-py313/
+venv/
+env/
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+secrets.toml
+*.pem
+*.key
+
+# Local data is not needed to run the deployed prediction app
+data/raw/
+data/processed/
+
+# Experimental model artifacts are not needed at runtime
+models/experiments/
+
+# Generated model artifacts
+*.joblib
+*.pkl
+*.pickle
+*.model
+!models/final/
+!models/final/final_model.joblib
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# OS-specific temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.tmp

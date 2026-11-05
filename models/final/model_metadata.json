@@ -1,0 +1,75 @@
+{
+  "model_version": "1.0.0",
+  "created_at_utc": "2026-11-04T14:40:32.045645+00:00",
+  "model_name": "tfidf_logistic_regression_balanced",
+  "serialization": "joblib",
+  "pipeline_steps": [
+    "tfidf",
+    "classifier"
+  ],
+  "vectorizer": {
+    "lowercase": true,
+    "strip_accents": "unicode",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95,
+    "sublinear_tf": true
+  },
+  "classifier": {
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "random_state": 42
+  },
+  "decision_threshold": 0.5434265976102519,
+  "threshold_type": "spam predict_proba threshold",
+  "threshold_origin": {
+    "source": "models/experiments/candidate_configurations.json",
+    "candidate": "logistic_regression_balanced",
+    "key": "OOF best F1",
+    "selection": "5-fold stratified out-of-fold best F1 on training subset",
+    "value": 0.5434265976102519
+  },
+  "training_data": {
+    "path": "[redacted local path]",
+    "record_count": 4136,
+    "class_counts": {
+      "ham": 3614,
+      "spam": 522
+    },
+    "sha256": "240b431cce84f594afd2fd7c5e8e40d37d52bab7fca4a9d87984a02004950624"
+  },
+  "independent_test": {
+    "path": "[redacted local path]",
+    "record_count": 1035,
+    "class_counts": {
+      "ham": 904,
+      "spam": 131
+    },
+    "sha256": "9723dff62c6f45a39a01b5a784a1442211e2a145b9895977f4bed8b86f629ac4",
+    "used_for": "one independent evaluation only; never fitted"
+  },
+  "validation_metrics_from_task_07": {
+    "accuracy": 0.9794685990338164,
+    "precision": 0.9230769230769231,
+    "recall": 0.9142857142857143,
+    "f1": 0.9186602870813397,
+    "macro_f1": 0.9534559210112987,
+    "average_precision": 0.9745414552124216,
+    "roc_auc": 0.9943225976420997,
+    "confusion_matrix": [
+      [
+        715,
+        8
+      ],
+      [
+        9,
+        96
+      ]
+    ],
+    "false_positives": 8,
+    "false_negatives": 9
+  }
+}
